@@ -1,0 +1,57 @@
+
+<div class="container">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="offset-3"></div>
+      <div class="col-md-6">
+        <form name="form" #f="ngForm" (ngSubmit)=" createContent()" novalidate class="feedback-form border border-top-0" style="padding: 20px;">
+
+          <div class="form-group">
+            <label for="image">Image url</label>
+            <input type="text"
+                   id="image"
+                   class="form-control"
+                   name="image"
+                   placeholder="Image url"
+                   [(ngModel)]="content.image"
+                   #image="ngModel"/>
+          </div>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text"
+                   id="title"
+                   class="form-control"
+                   name="title"
+                   placeholder="Title"
+                   [(ngModel)]="content.title"
+                   required email/>
+            </div>
+          <div class="form-group">
+            <label for="text">Text</label>
+            <textarea
+              id="text"
+              class="form-control"
+              name="text"
+              placeholder="Text"
+              rows="10"
+              [(ngModel)]="content.text">
+			    </textarea>
+            <!-- input validation group -->
+
+          </div>
+
+          <button type="submit" class="btn btn-info pull-right">
+            <i class="fa fa-envelope-o"></i>
+            <span> Create</span>
+          </button>
+        </form>
+      </div>
+      <div class="offset-3"></div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

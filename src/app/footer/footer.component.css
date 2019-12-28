@@ -1,0 +1,18 @@
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+  padding: 10px 0;
+}
+
+
+
+#footer {
+  background: #343a40 ;
+  clear: both;
+  position: relative;
+  height: auto;
+  margin-top: 500px;
+}
+
+
+

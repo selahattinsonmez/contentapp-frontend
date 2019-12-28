@@ -1,0 +1,51 @@
+<div class="container text-center">
+  <app-nav-bar></app-nav-bar>
+  <div class="row" style="margin-top:12px;">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+      <button type="buton"
+              (click)="apiService.router.navigateByUrl('/createContent')"
+              class="btn btn-warning pull-right"
+              style="margin-left:12px;"><i class="fa fa-plus"></i> New content
+      </button>
+
+    </div>
+
+  </div>
+  <div  *ngFor="let content of person.contents"   style="margin-top: 30px;">
+
+    <div class=" no-padding lib-item"  data-category="view">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+
+          <div class="col-md-6">
+            <img class="lib-img-show" src="{{content.image}}">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              {{content.title}}
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              {{content.text}}
+
+            </div>
+
+          </div>
+          <a (click)="deleteContent(content)"  class="pull-right text-danger" style="margin-left: 1070px;margin-bottom: 20px">
+            <i class="fa fa-trash" ></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-1"></div>
+
+
+  </div>
+
+
+</div>
+<app-footer></app-footer>

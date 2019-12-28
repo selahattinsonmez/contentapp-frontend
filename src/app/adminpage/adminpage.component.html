@@ -1,0 +1,59 @@
+<div class="container">
+  <app-nav-bar></app-nav-bar>
+  <!-- Note content -->
+  <div class="row" style="margin-top: 30px;">
+    <!-- Notebooks Menu -->
+    <div class="col-md-3" >
+      <br>
+      <div class="list-group list-group-flush">
+
+        <a class="list-group-item list-group-item-action border border-top-0 text-black-50" style="background-color: #ffc107">
+          <p>Users</p>
+        </a>
+        <a *ngFor="let personn of person.persons" (click)="getUsersContents(personn)"  class="text-warning bg-dark border border-top-0 list-group-item list-group-item-action" style="width: auto;">
+          <i class="fa fa-user"></i>&nbsp;
+          <p  >{{personn.username}}</p>
+          <a (click)="deleteUser(personn)"  class="pull-right text-danger">
+            <i class="fa fa-trash"></i>
+          </a>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <a *ngFor="let content of selectedPerson.contents"  ></a>
+    <div class="col-md-6 container">
+    <div  *ngFor="let content of selectedPerson.contents"   style="margin-top: 10px; margin-right: 10px;">
+
+      <div class=" no-padding lib-item"  data-category="view">
+        <div class="lib-panel">
+          <div class="row box-shadow">
+
+            <div class="col-md-6">
+              <img class="lib-img-show" src="{{content.image}}">
+            </div>
+            <div class="col-md-6">
+              <div class="lib-row lib-header">
+                {{content.title}}
+                <div class="lib-header-seperator"></div>
+              </div>
+              <div class="lib-row lib-desc">
+                {{content.text}}
+              </div>
+
+            </div>
+            <a (click)="deleteContent(content,contents.length)"  class="pull-right text-danger" style="margin-left: 510px;margin-bottom: 10px">
+              <i class="fa fa-trash" ></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+      </div>
+  </div>
+
+</div>
+<app-footer></app-footer>
